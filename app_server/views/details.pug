@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    //- h1.text-center #{Book.bookName}
+    //- p Author :- #{Book.author}
+    //- p Type :- #{Book.type}
+    //- p Price :- $ #{Book.price}
+    //- h2 Reviews
+    //- for rev in Book.reviews
+    //-     p #{rev.star}
+    //-     p #{rev.feedBack}
+    //-     p #{rev.userName}     
+
+    .container
+      .card
+        .container-fliud
+          .wrapper.row
+            .preview.col-md-6
+              .preview-pic.tab-content
+                #pic-1.tab-pane.active
+                  img(src='/images/thick-book.jpg')              
+            .details.col-md-6
+              h3.product-title #{Book.bookName}
+              .rating
+                .stars
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star
+                  span.fa.fa-star
+                span.review-no #{Book.reviews.length} reviews              
+              h4.price
+                | price :-  
+                span  $ #{Book.price}                             
+              h5.sizes
+                | Type :- 
+                span #{Book.type}
+              h5.colors
+                | Author :- 
+                span #{Book.author}
+              .action
+                button.add-to-cart.btn.btn-default(type='button') add to cart     
+      h1 Reviews 
+      .card
+        for rev in Book.reviews
+          .card-body
+            .row
+              .col-md-2
+                img.img.img-rounded.img-fluid(src='https://image.ibb.co/jw55Ex/def_face.jpg')              
+              .col-md-10
+                p
+                  a.float-left(href='#')
+                    strong #{rev.userName}
+                  span.float-right #{rev.star}                     
+                      i.text-warning.fa.fa-star
+                  //- span.float-right
+                  //-   i.text-warning.fa.fa-star
+                  //- span.float-right
+                  //-   i.text-warning.fa.fa-star
+                  //- span.float-right
+                  //-   i.text-warning.fa.fa-star
+                .clearfix
+                p
+                  | #{rev.feedBack}

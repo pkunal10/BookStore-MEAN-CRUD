@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1.text-center= title
+  .main.container
+    .row
+      .col-md-4  
+      .col-md-4
+        h1.display-4.m-b-2        
+        form(method='post' role="form" action='')
+          div.form-group
+            label(for='bookName') Book Name:
+            input#bookName.form-control(type='text', placeholder='Book Name' name='bookName')
+          div.form-group
+            label(for='author') Author:
+            input#author.form-control(type='text', placeholder='Author' name='author')
+          div.form-group
+            label(for='type') Type of Book:
+            input#type.form-control(type='text', placeholder='Type of book' name='type')
+          div.form-group
+            label(for='price') Price:
+            input#price.form-control(type='text', placeholder='Price'  name='price')         
+          button.btn.btn-primary(type='submit') Add
+      .col-md-4  

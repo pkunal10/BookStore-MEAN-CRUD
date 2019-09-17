@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1.text-center= title
+  .container
+    .row
+      for itm in Books
+        .col-lg-4
+          h2= itm.bookName
+          p Author :- #{itm.author}
+          p Type :- #{itm.type}
+          p Price :- $ #{itm.price}
+          a.btn.btn-primary(href=`/books/${itm._id}`) View
+    .row.text-center
+      a.btn.btn-success(href='/new') Create New Book
